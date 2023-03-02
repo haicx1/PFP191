@@ -16,35 +16,35 @@ class Student:
 
     @property
     def id(self):
-        return self.id
+        return self._id
 
     @property
     def name(self):
-        return self.name
+        return self._name
 
     @name.setter
     def name(self, value):
-        self.name = value
+        self._name = value
 
     @property
     def mark_e(self):
-        return self.mark_e
+        return self._mark_e
 
     @mark_e.setter
     def mark_e(self, value):
-        self.mark_e = value
+        self._mark_e = value
 
     @property
     def mark_m(self):
-        return self.mark_m
+        return self._mark_m
 
     @mark_m.setter
     def mark_m(self, value):
-        self.mark_m = value
+        self._mark_m = value
 
     @property
     def mark_p(self):
-        return self.mark_p
+        return self._mark_p
 
     @mark_p.setter
     def mark_p(self, value):
@@ -52,19 +52,19 @@ class Student:
 
     @property
     def mark_chem(self):
-        return self.mark_chem
+        return self._mark_chem
 
     @mark_chem.setter
     def mark_chem(self, value):
-        self.mark_chem = value
+        self._mark_chem = value
 
     @property
     def mark_cs(self):
-        return self.mark_cs
+        return self._mark_cs
 
     @mark_cs.setter
     def mark_cs(self, value):
-        self.mark_cs = value
+        self._mark_cs = value
 
     def display(self):
         print('Roll number:', self._id)
@@ -110,37 +110,37 @@ def printMenu1():
 
 
 def mod_student1(student):
-    print('Name:', student._name)
+    print('Name:', student.name)
     choice = input('Wants to edit(y/n)?')
     if choice == 'y' or choice == 'Y':
-        student._name = input('Enter the name:')
-    print('English marks:', student._mark_e)
+        student.name = input('Enter the name:')
+    print('English marks:', student.mark_e)
     choice_e = input('Wants to edit(y/n)?')
     if choice_e == 'y' or choice_e == 'Y':
-        student._mark_e = int(input('Enter mark:'))
-    print('Math marks:', student._mark_m)
+        student.mark_e = int(input('Enter mark:'))
+    print('Math marks:', student.mark_m)
     choice_m = input('Wants to edit(y/n)?')
     if choice_m == 'y' or choice_m == 'Y':
-        student._mark_m = int(input('Enter mark:'))
-    print('Physics marks:', student._mark_p)
+        student.mark_m = int(input('Enter mark:'))
+    print('Physics marks:', student.mark_p)
     choice_p = input('Wants to edit(y/n)?')
     if choice_p == 'y' or choice_p == 'Y':
-        student._mark_p = int(input('Enter mark:'))
-    print('Chemistry marks:', student._mark_chem)
+        student.mark_p = int(input('Enter mark:'))
+    print('Chemistry marks:', student.mark_chem)
     choice_ch = input('Wants to edit(y/n)?')
     if choice_ch == 'y' or choice_ch == 'Y':
-        student._mark_ch = int(input('Enter mark:'))
-    print('CS marks:', student._mark_cs)
+        student.mark_ch = int(input('Enter mark:'))
+    print('CS marks:', student.mark_cs)
     choice_cs = input('Wants to edit(y/n)?')
     if choice_cs == 'y' or choice_cs == 'Y':
-        student._mark_cs = int(input('Enter mark:'))
+        student.mark_cs = int(input('Enter mark:'))
     student.display()
 
 
 def search_student(rollnumber):
     search = False
     for student in stuList:
-        if student._id == rollnumber:
+        if student.id == rollnumber:
             print('PUPIL DETAIL..')
             student.display()
             return student
@@ -151,10 +151,11 @@ def search_student(rollnumber):
 def del_student(rollnumber):
     delete = False
     for student in stuList:
-        if student._id == rollnumber:
+        if student.id == rollnumber:
             stuList.remove(student)
             delete = True
         print('record found and deleted')
+        break
     if not delete:
         print('rollnumber not found')
 
@@ -188,8 +189,9 @@ def report_menu():
         except:
             print('error')
         if choice_report == 1:
-            print('Rollno   Name       English  Maths  Physics  Chemistry  CS')
-            print(stuList[-1])
+            print('Rollno   Name      English  Maths  Physics  Chemistry  CS')
+            for student in stuList:
+                print(student.id,student.name,student.mark_e,student.mark_m,student.mark_p,student.mark_chem,student.mark_cs)
             continue
         if choice_report == 2:
             roll = int(input('Enter the rollno you want to search:'))
