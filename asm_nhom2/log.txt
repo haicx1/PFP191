@@ -1,0 +1,11 @@
+Nha_rieng 6 12
+Belta_FU_HO 8 15
+Coffee_Highland 8 47
+Belta_FU_HO 9 12
+Nha_an_1-5 11 57
+Hoi_truong 12 55
+Alpha_FU_HO 14 12
+Nha_rieng 17 5
+Coffee_HighLand 20 15
+Hoi_truong 14 30
+Nha_rieng 21 50
