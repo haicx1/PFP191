@@ -3,6 +3,7 @@ import itertools
 
 class Location:
     id_object = itertools.count(1)
+
     def __init__(self, name, hr, mins):
         self._id = next(Location.id_object)
         self._name = name
@@ -32,3 +33,6 @@ class Location:
     @mins.setter
     def mins(self, value):
         self._mins = value
+
+    def display(self):
+        print(self.name)

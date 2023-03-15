@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 from cophieu import VIC, FLC, HSG
 
-data_path = r'C:\Users\haich\Downloads\Documents\file\data.txt'
+data_path = 'data.txt'
 VIC1 = list()
 FLC1 = list()
 HSG1 = list()
