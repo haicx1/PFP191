@@ -4,7 +4,7 @@ import datetime
 
 class ManageAddress:
     datas = list()
-    path = r'log.txt'
+    path = 'log.txt'
 
     def read_data(self):
         with open(self.path, 'r') as fh:
